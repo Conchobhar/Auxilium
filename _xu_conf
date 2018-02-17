@@ -1,0 +1,9 @@
+# Appearence
+Appearence	 	-> numix
+Window Manager 	-> Rele (needed to download for Xubuntu):
+https://www.xfce-look.org/content/show.php/Rele?content=77260
+
+# Disable volume pop up
+ sudo mv /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service.disabled
+# Re-enable
+ sudo mv /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service.disabled /usr/share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service
