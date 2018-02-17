@@ -1,0 +1,132 @@
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+								PERSONAL
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+-- rsync backup
+Run ~/xubkup.sh for backup of main folders and ~/* files
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+								UNIX
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+-- File details
+# Wordcount and related:
+wc myFile.ext
+	-c	bytes
+	-l	lines
+	-m	characters
+	-w	words
+# Pipe wc stdout to ls:
+ls -l | wc -l
+
+
+-- Comparing files:
+# See ALL differences
+diff file1 file2
+# stop at first byte difference
+cmp file1 file2
+
+
+-- LESS
+-N or --LINE-NUMBERS display line numbers
+:(lineNum)g		jump to given lineNum
+
+n N		next prev find
+g G		first last line
+u d		up down scroll
+spc b	next prev page
+
+-- NANO
+^G		Help Menu
+
+
+-- TMUX
+tmux new -s sessionName
+tmux kill-session -t sessionName
+tmux ls
+tmux a #
+tmux a -t sessionName
+
+ctrl+b for default prefix
+	d	detach
+	c	new window
+	,	name window
+	w	list windows
+	f	find window
+	&	kill window
+	o	swap panes
+	q	show pane numbers
+	x	kill pane
+	⍽	space - toggle between layouts
+
+
+-- GREP - Global Regular Expression Print
+grep -[options] 'stringToSearchFor' /directory/ofInterest/orSpecificFile.txt
+	-n print line number
+	-l return only filenames
+	-i ignore case
+
+
+-- FIND - File search
+find ./ -iname 'file*.txt'
+
+	
+-- SCP - Secure Copy
+scp 'localFileToSend' user@remoteHost:/remoteDirectory/newRemoteLocation
+scp user@remoteHost:/remoteFileToCopy /localDirectory/newLocalLocation
+
+
+-- SublimeText3
+In console (ctrl+`) set
+	sublime.log_commands(True)
+to output commands. These can be used to set keyboard shortcuts.
+e.g. for jumping to start/end of line:
+{ "keys": ["ctrl+super+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+{ "keys": ["ctrl+super+right"], "command": "move_to", "args": {"to": "eol", "extend": false} }
+
+Multiple cursors:
+	Ctrl+leftClick		Place next cursor
+	Shift+rightClick	Column select
+	Ctrl+d 				Sequential word select
+
+LaTeX:
+	Ctrl + b			Build
+
+
+-- PROCESS SUSPENSION
+ctrl+Z	suspend
+:fg		resume last suspended
+:bg		background resume
+:jobs	list suspended
+
+-- RSYNC - Remote Synchronisation
+# Sync the 'contents' of dir1 to dir2
+rsync -a dir1/ dir2
+      
+rsync -a ~/dir1 username@remote_host:destination_directory
+rsync -a username@remote_host:/home/username/dir1 place_to_sync_on_local_machine
+
+	-a	"archive", syncs recursively, preserves symbolic links, special and device files, modification times, group, owner, and permissions.
+	-z	zip uncompressed files before sending
+	-P	combines --progress (incl. progress bar) and --partial (resume interrupted transferes)
+	
+	-v verbose
+	-n or --dry-run
+		Perform trial run without making any changes
+
+
+-- TAR
+# Create tar and extract tar respectively:	(order of options may matter)
+tar -cvzf file.tar.gz file1 file2 file3 ...
+tar -xvzf file.tar.gz
+
+
+-- TEE
+# Reads stdin and writes to stdout and one or more files, effectively duplicating its input
+# Named after T-splitter used in plumbing!
+Example:
+myScript.sh 2>&1 | tee myOutput.log
+# 2>&1 is redirecting stdErr to stdOut
+
+-- XARGS
+# Use stdout as arguments for a program, rather than sending it the actual text:
+find ./ -iname 'fileOfInterest.ext' | xargs less

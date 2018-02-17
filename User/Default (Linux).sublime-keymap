@@ -1,0 +1,11 @@
+[
+    // Jump to BoL/ Eol and highlight with shift ('extend')
+    { "keys": ["ctrl+super+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+super+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+super+shift+left"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+    { "keys": ["ctrl+super+shift+right"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+
+    // alt line swap
+    { "keys": ["alt+up"], "command": "swap_line_up"},
+    { "keys": ["alt+down"], "command": "swap_line_down"}
+]

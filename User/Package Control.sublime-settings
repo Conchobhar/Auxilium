@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"BracketHighlighter",
+		"Colorsublime",
+		"Expand Selection to Whitespace",
+		"GNU Octave Completions",
+		"LaTeXTools",
+		"Package Control",
+		"PyDOC",
+		"Python PEP8 Autoformat",
+		"SendCode",
+		"Theme - Afterglow",
+		"Theme - Centurion",
+		"Theme - Spacegray",
+		"TrailingSpaces"
+	]
+}
