@@ -127,6 +127,14 @@ Example:
 myScript.sh 2>&1 | tee myOutput.log
 # 2>&1 is redirecting stdErr to stdOut
 
+
 -- XARGS
 # Use stdout as arguments for a program, rather than sending it the actual text:
 find ./ -iname 'fileOfInterest.ext' | xargs less
+
+
+-- GIT
+git init
+git add .
+git add --all
+git commit -m "My Message"
