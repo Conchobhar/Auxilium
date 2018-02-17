@@ -134,7 +134,13 @@ find ./ -iname 'fileOfInterest.ext' | xargs less
 
 
 -- GIT
+# local repo
 git init
 git add .
 git add --all
 git commit -m "My Message"
+git status
+
+# assign to github repo and push
+git remote add origin https://github.com/Conchobhar/REPO_NAME.git
+git push -u origin master
