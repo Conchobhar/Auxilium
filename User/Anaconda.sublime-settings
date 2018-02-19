@@ -1,8 +1,0 @@
-
-{
-	/*
-        Set is a false to disable Anaconda Linting totally
-    */
-    "anaconda_linting": false,
-    "python_interpreter": "python3"
-}
